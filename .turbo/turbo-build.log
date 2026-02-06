@@ -1,0 +1,75 @@
+
+> @optic/web@0.1.0 build /Users/michaelezehi/Documents/src/__new-world__/optic-qa-ai/apps/web
+> next build
+
+⚠ `eslint` configuration in next.config.ts is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.ts options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.1.1 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 11.5s
+  Skipping validation of types
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/19) ...
+  Generating static pages using 9 workers (4/19) 
+  Generating static pages using 9 workers (9/19) 
+  Generating static pages using 9 workers (14/19) 
+✓ Generating static pages using 9 workers (19/19) in 281.0ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /[orgSlug]/[projectSlug]
+├ ƒ /[orgSlug]/[projectSlug]/ai-drafts
+├ ƒ /[orgSlug]/[projectSlug]/debug
+├ ƒ /[orgSlug]/[projectSlug]/errors
+├ ƒ /[orgSlug]/[projectSlug]/errors/[id]
+├ ƒ /[orgSlug]/[projectSlug]/issues
+├ ƒ /[orgSlug]/[projectSlug]/issues/[id]
+├ ƒ /[orgSlug]/[projectSlug]/issues/new
+├ ƒ /[orgSlug]/[projectSlug]/sessions
+├ ƒ /[orgSlug]/[projectSlug]/sessions/[id]
+├ ƒ /[orgSlug]/[projectSlug]/settings/ai
+├ ƒ /[orgSlug]/[projectSlug]/settings/api-keys
+├ ƒ /[orgSlug]/[projectSlug]/settings/setup
+├ ƒ /api/extension/ai-enhance
+├ ƒ /api/extension/auth
+├ ƒ /api/extension/auth/callback
+├ ƒ /api/extension/auth/complete
+├ ƒ /api/extension/download
+├ ƒ /api/extension/errors
+├ ƒ /api/extension/issues
+├ ƒ /api/extension/projects
+├ ƒ /api/extension/projects/[projectId]/key
+├ ƒ /api/extension/sessions
+├ ƒ /api/extension/sessions/[sessionId]/end
+├ ƒ /api/extension/sessions/[sessionId]/events
+├ ƒ /api/health
+├ ƒ /api/ingest
+├ ƒ /auth/callback
+├ ○ /auth/complete
+├ ƒ /auth/login
+├ ƒ /auth/sync
+├ ƒ /dashboard
+├ ○ /docs
+├ ○ /extension-auth
+├ ○ /extension-callback
+├ ○ /how-to-install
+├ ƒ /onboarding
+├ ƒ /onboarding/create-project
+├ ○ /privacy
+├ ○ /sdk-test
+├ ○ /security
+└ ○ /terms
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

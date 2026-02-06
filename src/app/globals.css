@@ -1,0 +1,314 @@
+/* Import bold, characterful fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brutalist color system - pure and stark */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 48 96% 53%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 48 96% 53%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 48 96% 53%;
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-black;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-black antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  /* Strong selection styling */
+  ::selection {
+    @apply bg-yellow-400 text-black;
+  }
+}
+
+@layer utilities {
+  /* ============================================
+     BRUTALIST CORE UTILITIES
+     ============================================ */
+
+  /* Hard shadow - the signature brutalist effect */
+  .brutal-shadow {
+    box-shadow: 4px 4px 0 0 #000;
+  }
+
+  .brutal-shadow-lg {
+    box-shadow: 8px 8px 0 0 #000;
+  }
+
+  .brutal-shadow-xl {
+    box-shadow: 12px 12px 0 0 #000;
+  }
+
+  /* Hover state - shadow shift */
+  .brutal-hover {
+    @apply transition-all duration-150;
+  }
+
+  .brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #000;
+  }
+
+  .brutal-hover:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 #000;
+  }
+
+  /* Inverted hover - for dark elements */
+  .brutal-invert:hover {
+    @apply bg-yellow-400 text-black;
+  }
+
+  /* ============================================
+     BRUTALIST CARD STYLES
+     ============================================ */
+
+  .brutal-card {
+    @apply bg-white border-4 border-black p-6;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+
+  .brutal-card-yellow {
+    @apply bg-yellow-400 border-4 border-black p-6;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+
+  .brutal-card-dark {
+    @apply bg-black border-4 border-black p-6 text-white;
+    box-shadow: 4px 4px 0 0 #facc15;
+  }
+
+  /* ============================================
+     BRUTALIST BUTTON STYLES
+     ============================================ */
+
+  .brutal-btn {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold uppercase tracking-wider border-4 border-black transition-all duration-150;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+
+  .brutal-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #000;
+  }
+
+  .brutal-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 #000;
+  }
+
+  .brutal-btn-primary {
+    @apply brutal-btn bg-yellow-400 text-black;
+  }
+
+  .brutal-btn-secondary {
+    @apply brutal-btn bg-white text-black;
+  }
+
+  .brutal-btn-dark {
+    @apply brutal-btn bg-black text-white;
+  }
+
+  /* ============================================
+     BRUTALIST TYPOGRAPHY
+     ============================================ */
+
+  .brutal-heading {
+    @apply font-black uppercase tracking-tight leading-none;
+    letter-spacing: -0.02em;
+  }
+
+  .brutal-mono {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Thick underline effect */
+  .brutal-underline {
+    @apply relative inline-block;
+  }
+
+  .brutal-underline::after {
+    content: '';
+    @apply absolute left-0 right-0 h-3 bg-yellow-400 -z-10;
+    bottom: 0.1em;
+  }
+
+  /* Strike through effect */
+  .brutal-strike {
+    @apply relative inline-block;
+  }
+
+  .brutal-strike::after {
+    content: '';
+    @apply absolute left-0 right-0 h-1 bg-black top-1/2 -translate-y-1/2;
+  }
+
+  /* ============================================
+     BRUTALIST DIVIDERS & BORDERS
+     ============================================ */
+
+  .brutal-border-t {
+    @apply border-t-4 border-black;
+  }
+
+  .brutal-border-b {
+    @apply border-b-4 border-black;
+  }
+
+  .brutal-divider {
+    @apply w-full h-1 bg-black;
+  }
+
+  /* Zigzag pattern divider */
+  .brutal-zigzag {
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      black 10px,
+      black 20px
+    );
+    height: 4px;
+  }
+
+  /* ============================================
+     BRUTALIST ANIMATIONS
+     ============================================ */
+
+  @keyframes brutal-slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes brutal-slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes brutal-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .brutal-animate-up {
+    animation: brutal-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .brutal-animate-in {
+    animation: brutal-slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .brutal-animate-pop {
+    animation: brutal-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* ============================================
+     BRUTALIST GRID BACKGROUNDS
+     ============================================ */
+
+  .brutal-grid {
+    background-image:
+      linear-gradient(#000 1px, transparent 1px),
+      linear-gradient(90deg, #000 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .brutal-dots {
+    background-image: radial-gradient(#000 2px, transparent 2px);
+    background-size: 20px 20px;
+  }
+
+  /* ============================================
+     MARQUEE ANIMATION
+     ============================================ */
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  /* ============================================
+     CODE BLOCK - BRUTALIST STYLE
+     ============================================ */
+
+  .brutal-code {
+    @apply brutal-mono text-sm bg-black text-white p-6 border-4 border-black;
+    box-shadow: 4px 4px 0 0 #facc15;
+  }
+
+  .brutal-code .keyword { @apply text-yellow-400; }
+  .brutal-code .string { @apply text-green-400; }
+  .brutal-code .comment { @apply text-gray-500; }
+  .brutal-code .tag { @apply text-red-400; }
+
+  /* ============================================
+     UTILITY OVERRIDES FOR BRUTALISM
+     ============================================ */
+
+  /* Remove all border radius globally for brutalist feel */
+  .brutal * {
+    border-radius: 0 !important;
+  }
+}

@@ -1,0 +1,9 @@
+export { Navbar } from "./Navbar";
+export { Hero } from "./Hero";
+export { Services } from "./Services";
+export { Goals } from "./Goals";
+export { TechStack } from "./TechStack";
+export { WhyUs } from "./WhyUs";
+export { FAQ } from "./FAQ";
+export { CTASection } from "./CTASection";
+export { Footer } from "./Footer";
